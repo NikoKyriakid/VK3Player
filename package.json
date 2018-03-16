@@ -1,0 +1,40 @@
+{
+  "name": "vk3player",
+  "version": "1.0.0",
+  "description": "Mp3 Player using VK steamed library",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "tsc": "tsc",
+    "start": "electron .",
+    "webpack": "webpack",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikoKyriakid/VK3Player.git"
+  },
+  "author": "NikoKyriakid",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/NikoKyriakid/VK3Player/issues"
+  },
+  "homepage": "https://github.com/NikoKyriakid/VK3Player#readme",
+  "devDependencies": {
+    "awesome-typescript-loader": "^4.0.1",
+    "electron": "^1.8.3",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.0.6",
+    "source-map-loader": "^0.2.3",
+    "typescript": "^2.7.2",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12"
+  },
+  "dependencies": {
+    "@types/react": "^16.0.40",
+    "@types/react-dom": "^16.0.4",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
