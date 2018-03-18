@@ -1,15 +1,14 @@
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
-//var path = require('path');
-
-const electronConfig = {
+const nodeConfig = {
+    mode: 'development',
+    target: 'node',
     entry: {
-        app: "./src/app.ts",
-        renderer: "./src/renderer.ts"
+        server: "./src/server.ts"
     },
     output: {
-        path: __dirname + "/dist",
+        path: __dirname + "/www",
         filename: "[name].js"
     },
 
@@ -20,7 +19,6 @@ const electronConfig = {
         // Add '.ts' and '.tsx' as resolvable extensions.
         extensions: [".ts", ".tsx", ".js", ".json"]
     },
-
     module: {
         rules: [
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
@@ -35,12 +33,9 @@ const electronConfig = {
         new HtmlWebpackPlugin({
             title: 'VK3Player',
             template: 'public/index.html',
-            excludeChunks: [ 'app' ]
+            excludeChunks: [ 'server' ]
         })
     ],
-
-    target: 'electron-main',    // This is needed config to tell webpack that the electron objects are available on runtime.
-    mode: 'development',
 
     // When importing a module whose path matches one of the following, just
     // assume a corresponding global variable exists and use that instead.
@@ -50,6 +45,6 @@ const electronConfig = {
         "react": "React",
         "react-dom": "ReactDOM"
     },
-};
+  };
 
-module.exports = [ electronConfig ];
+  module.exports = [ nodeConfig ];

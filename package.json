@@ -4,6 +4,8 @@
   "description": "Mp3 Player using VK steamed library",
   "main": "dist/app.js",
   "scripts": {
+    "node": "node www/server.js",
+    "build_node": "webpack --config webpack.config.node.js",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "tsc": "tsc",
@@ -34,6 +36,7 @@
   "dependencies": {
     "@types/react": "^16.0.40",
     "@types/react-dom": "^16.0.4",
+    "express": "^4.16.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   }

@@ -1,3 +1,3 @@
-import App from '../lib/electronConnector';
+import electroApp from '../lib/electronConnector';
 
-new App('dist', 'index.html', '1.0', true).run();
+new electroApp('dist', 'index.html', '1.0', true).run();
