@@ -1,10 +1,13 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: "./src/app.ts",
+    entry: {
+        app: "./src/app.ts",
+        renderer: "./src/renderer.ts"
+    },
     output: {
         path: __dirname + "/dist",
-        filename: "bundle.js"
+        filename: "[name].js"
     },
 
     // Enable sourcemaps for debugging webpack's output.
@@ -28,11 +31,12 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'VK3Player',
-            template: 'src/index.html'
+            template: 'src/index.html',
+            excludeChunks: [ 'app' ]
         })
     ],
 
-    target: 'electron-main',
+    target: 'electron-main',    // This is needed config to tell webpack that the electron objects are available on runtime.
     mode: 'development',
 
     // When importing a module whose path matches one of the following, just
