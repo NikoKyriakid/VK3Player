@@ -35,7 +35,7 @@ const electronConfig = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'VK3Player',
-            template: 'public/index.html',
+            template: 'src/assets/index.html',
             excludeChunks: [ 'app' ]
         })
     ],
