@@ -1,9 +1,8 @@
-
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const nodeExternals = require('webpack-node-externals');
 
 const nodeConfig = {
     mode: 'development',
-    target: 'node',
     entry: {
         server: "./src/server.ts"
     },
@@ -32,7 +31,8 @@ const nodeConfig = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'VK3Player',
-            template: 'public/index.html',
+            filename: 'public/index.html',
+            template: 'src/assets/index.html',
             excludeChunks: [ 'server' ]
         })
     ],
@@ -41,10 +41,16 @@ const nodeConfig = {
     // assume a corresponding global variable exists and use that instead.
     // This is important because it allows us to avoid bundling all of our
     // dependencies, which allows browsers to cache those libraries between builds.
-    externals: {
-        "react": "React",
-        "react-dom": "ReactDOM"
-    },
-  };
+    // externals: {
+    //   //  "react": "React",
+    //   //  "react-dom": "ReactDOM"
+    // },
+
+    target: 'node', // in order to ignore built-in modules like path, fs, etc. 
+    externals: [nodeExternals()], // in order to ignore all modules in node_modules folder 
+    node: {
+        __dirname: false
+    }
+};
 
   module.exports = [ nodeConfig ];

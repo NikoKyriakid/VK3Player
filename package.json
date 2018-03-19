@@ -10,7 +10,6 @@
     "build": "webpack --mode production",
     "tsc": "tsc",
     "start": "electron .",
-    "webpack": "webpack",
     "test": "test"
   },
   "repository": {
@@ -31,7 +30,8 @@
     "source-map-loader": "^0.2.3",
     "typescript": "^2.7.2",
     "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.12"
+    "webpack-cli": "^2.0.12",
+    "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
     "@types/react": "^16.0.40",

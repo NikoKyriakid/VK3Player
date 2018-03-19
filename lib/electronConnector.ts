@@ -1,7 +1,7 @@
 import * as path from 'path';
 import { app, BrowserWindow, ipcMain } from 'electron';
 
-const mainProcess:any = global;
+// const mainProcess:any = global; mainProcess.commonMemory // or (<any>global).commonMemory
 
 export default class electronConnector {
 
@@ -19,7 +19,7 @@ export default class electronConnector {
         this.appPath = path.join(app.getAppPath(), dist || 'bin');
         
         this.win = null;
-        mainProcess.commonMemory = {
+        (<any>global).commonMemory = {
             path: this.appPath
         };
     }

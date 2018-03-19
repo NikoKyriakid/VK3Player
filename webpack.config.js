@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+var ISPROD = process.env.NODE_ENV == "production";
+var ISDEV = !ISPROD;
 
 //var path = require('path');
 
