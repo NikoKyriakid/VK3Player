@@ -84,7 +84,7 @@ export default class electronConnector {
         this.win = new BrowserWindow({
             width: 1280,
             height: 720+1,
-            frame: false,
+            frame: true,
             backgroundColor: 'grey'
         });
 
